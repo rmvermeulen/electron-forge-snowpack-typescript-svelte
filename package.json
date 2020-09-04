@@ -1,21 +1,19 @@
 {
   "name": "electron-turbo-template",
   "version": "1.0.0",
-  "description": "Extreme DX: electron-forge + typescript + snowpack + svelte",
-  "main": "build/main",
+  "description": "Extreme DX: electron-forge + snowpack(typescript, svelte)",
+  "main": "src/electron.js",
   "scripts": {
     "start": "electron-forge start",
-    "start:dev": "yarn start -- -- dev",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
     "test": "jest",
-    "dev": "concurrently npm:start:dev npm:dev:renderer",
-    "dev:renderer": "snowpack dev",
-    "build": "concurrently npm:build:main npm:build:renderer",
-    "build:main": "tsc -p tsconfig.main.json",
-    "build:renderer": "snowpack build"
+    "dev": "concurrently npm:dev:run dev:serve",
+    "dev:run": "yarn start -- -- dev",
+    "dev:serve": "snowpack dev",
+    "build": "snowpack build"
   },
   "private": true,
   "keywords": [],
