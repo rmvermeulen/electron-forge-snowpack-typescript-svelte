@@ -5,15 +5,16 @@
   "main": "build/main",
   "scripts": {
     "start": "electron-forge start",
+    "start:dev": "yarn start -- -- dev",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
     "test": "jest",
-    "dev": "concurrently yarn:dev:main yarn:dev:renderer",
+    "dev": "concurrently npm:start:dev npm:dev:renderer",
     "dev:main": "yarn build:main --watch",
     "dev:renderer": "snowpack dev",
-    "build": "concurrently yarn:build:main yarn:build:renderer",
+    "build": "concurrently npm:build:main npm:build:renderer",
     "build:main": "tsc -p tsconfig.main.json",
     "build:renderer": "snowpack build"
   },

@@ -50,11 +50,5 @@
       rel="noopener noreferrer">
       {message}
     </a>
-    <p>
-      {#each [1, 2, 3, 4, 5] as item}<sub>another item {item}</sub>{/each}
-    </p>
-    <p>
-      {#each [1, 2, 3, 4, 5] as item}another item {item}{/each}
-    </p>
   </header>
 </div>

@@ -1,10 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
-import { help } from './helper'
-
-help()
-
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   // eslint-disable-line global-require
@@ -18,8 +14,18 @@ const createWindow = () => {
     height: 600,
   })
 
-  // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, '../index.html'))
+  const args = process.argv.slice(2)
+  if (args.includes('dev')) {
+    console.log('load dev url')
+
+    // and load the snowpack dev url
+    mainWindow.loadURL('http://localhost:8080')
+  } else {
+    console.log('load index.html')
+
+    // and load the index.html of the app.
+    mainWindow.loadFile(path.join(__dirname, '../index.html'))
+  }
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
