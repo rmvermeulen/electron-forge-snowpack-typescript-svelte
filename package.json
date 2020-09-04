@@ -10,7 +10,7 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
     "test": "jest",
-    "dev": "concurrently npm:dev:run dev:serve",
+    "dev": "concurrently npm:dev:run npm:dev:serve",
     "dev:run": "yarn start -- -- dev",
     "dev:serve": "snowpack dev",
     "build": "snowpack build"
