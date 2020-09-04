@@ -1,5 +1,5 @@
 {
-  "name": "electron-turbo-template",
+  "name": "electron-forge-snowpack-typescript-svelte",
   "version": "1.0.0",
   "description": "Extreme DX: electron-forge + snowpack(typescript, svelte)",
   "main": "src/electron.js",
