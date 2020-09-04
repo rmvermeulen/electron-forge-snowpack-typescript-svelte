@@ -12,7 +12,6 @@
     "lint": "echo \"No linting configured\"",
     "test": "jest",
     "dev": "concurrently npm:start:dev npm:dev:renderer",
-    "dev:main": "yarn build:main --watch",
     "dev:renderer": "snowpack dev",
     "build": "concurrently npm:build:main npm:build:renderer",
     "build:main": "tsc -p tsconfig.main.json",

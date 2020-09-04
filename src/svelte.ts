@@ -1,12 +1,8 @@
 import App from './App.svelte'
 
-console.log({
-  file: 'svelte.ts',
-})
-
 var app = new App({
   target: document.body,
-  props: { foo: true },
+  props: {},
 })
 
 export default app
