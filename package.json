@@ -1,8 +1,7 @@
 {
-  "name": "minimal-setup",
-  "productName": "minimal-setup",
+  "name": "electron-turbo-template",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Extreme DX: electron-forge + typescript + snowpack + svelte",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -11,6 +10,7 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
+  "private": true,
   "keywords": [],
   "author": {
     "name": "Rasmus Vermeulen",
