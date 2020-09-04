@@ -87,3 +87,6 @@ typings/
 
 # Electron-Forge
 out/
+
+# tsc + svelte output
+public/build
