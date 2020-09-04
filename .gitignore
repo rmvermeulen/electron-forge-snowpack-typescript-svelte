@@ -88,5 +88,8 @@ typings/
 # Electron-Forge
 out/
 
-# tsc + svelte output
+# tsc output
 public/build
+
+# snowpack output
+build/

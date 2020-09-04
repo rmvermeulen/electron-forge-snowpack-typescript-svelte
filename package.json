@@ -4,12 +4,16 @@
   "description": "Extreme DX: electron-forge + typescript + snowpack + svelte",
   "main": "public/build/main.js",
   "scripts": {
-    "prestart": "tsc -p tsconfig.main.json",
+    "prestart": "yarn build",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "test": "jest",
+    "build": "concurrently 'yarn:build:main' 'yarn:build:renderer'",
+    "build:main": "tsc -p tsconfig.main.json",
+    "build:renderer": "snowpack build"
   },
   "private": true,
   "keywords": [],
@@ -46,7 +50,8 @@
     }
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "svelte": "^3.24.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "6.0.0-beta.53",
@@ -54,7 +59,22 @@
     "@electron-forge/maker-rpm": "6.0.0-beta.53",
     "@electron-forge/maker-squirrel": "6.0.0-beta.53",
     "@electron-forge/maker-zip": "6.0.0-beta.53",
+    "@snowpack/app-scripts-svelte": "^1.8.4",
+    "@snowpack/plugin-run-script": "^2.1.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/svelte": "^3.0.0",
+    "@tsconfig/svelte": "^1.0.10",
+    "@types/jest": "^26.0.13",
+    "@types/snowpack-env": "^2.3.0",
+    "concurrently": "^5.3.0",
     "electron": "10.1.1",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.0",
+    "snowpack": "^2.10.1",
+    "svelte-check": "^1.0.35",
+    "svelte-preprocess": "^4.2.1",
     "typescript": "^4.0.2"
   }
 }
