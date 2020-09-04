@@ -15,7 +15,7 @@ const createWindow = () => {
   })
 
   const args = process.argv.slice(2)
-  if (args.includes('dev')) {
+  if (args.includes('dev') || process.env.DEV) {
     console.log('load dev url')
 
     // and load the snowpack dev url
